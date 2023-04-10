@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+/** VARIABLES **/
+:root {
+  --primaryColor: #fff;
+  --navColor1: #25274D;
+  --navColor2: #464866;
+  --navColor3: #AAABB8;
+  --navColor4: #2E9CCA;
+  --navColor5: #29648A;
+}
+
+/** STYLE **/
+html {
+  box-sizing: border-box;
+}
+html body {
+  margin: 0;
+  background: #000;
+  font-family: Nunito, sans-serif;
+  -webkit-user-select: none; /* Safari */ /* IE 10 and IE 11 */
+  -moz-user-select: none;
+       user-select: none; /* Standard syntax */
+  /* --- Navigation Menu ------------------------------ */
+  /* --- Menu Bars ------------------------------------ */
+  /* --- Sections ------------------------------------ */
+}
+html body .overlay {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(-100vW);
+}
+html body .overlay nav {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+html body .overlay nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  list-style: none;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  /* Nav Menu Items */
+}
+html body .overlay nav ul li {
+  height: 20%;
+  overflow: hidden;
+  /* Slide color for each nav item */
+  /* Slide in animation with delay for each nav item */
+  /* Slide out animation with delay for each nav item */
+}
+html body .overlay nav ul li a {
+  position: relative;
+  top: 45%;
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+html body .overlay nav ul li a:hover {
+  transform: scale(1.2);
+}
+html body .overlay nav ul li a:hover::before {
+  opacity: 1;
+}
+html body .overlay nav ul li a::before {
+  content: "";
+  width: 25vW;
+  height: 3px;
+  background-color: #FFF;
+  position: absolute;
+  top: 47.5%;
+  left: 0;
+  opacity: 0;
+}
+html body .overlay nav ul li:nth-of-type(1) {
+  background-color: var(--navColor1);
+}
+html body .overlay nav ul li:nth-of-type(2) {
+  background-color: var(--navColor2);
+}
+html body .overlay nav ul li:nth-of-type(3) {
+  background-color: var(--navColor3);
+}
+html body .overlay nav ul li:nth-of-type(4) {
+  background-color: var(--navColor4);
+}
+html body .overlay nav ul li:nth-of-type(5) {
+  background-color: var(--navColor5);
+}
+html body .overlay nav ul li.slide-in-1 {
+  animation: slide-in 0.4s linear 0.2s both;
+}
+html body .overlay nav ul li.slide-in-2 {
+  animation: slide-in 0.4s linear 0.4s both;
+}
+html body .overlay nav ul li.slide-in-3 {
+  animation: slide-in 0.4s linear 0.6s both;
+}
+html body .overlay nav ul li.slide-in-4 {
+  animation: slide-in 0.4s linear 0.8s both;
+}
+html body .overlay nav ul li.slide-in-5 {
+  animation: slide-in 0.4s linear 1s both;
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+html body .overlay nav ul li .slide-out-1 {
+  animation: slide-out 0.3s linear 0.5s both;
+}
+html body .overlay nav ul li .slide-out-2 {
+  animation: slide-out 0.3s linear 0.4s both;
+}
+html body .overlay nav ul li .slide-out-3 {
+  animation: slide-out 0.3s linear 0.3s both;
+}
+html body .overlay nav ul li .slide-out-4 {
+  animation: slide-out 0.3s linear 0.2s both;
+}
+html body .overlay nav ul li .slide-out-5 {
+  animation: slide-out 0.3s linear 0.1s both;
+}
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+html body .overlay.overlay-slide-right {
+  transition: all 0.4s ease-in-out;
+  transform: translateX(0);
+}
+html body .overlay.overlay-slide-left {
+  transition: all 0.8s ease-in-out;
+  transform: translateX(-100vW);
+}
+html body .menu-bars {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  z-index: 10;
+  display: inline;
+  cursor: pointer;
+}
+html body .menu-bars .bar1, html body .menu-bars .bar2, html body .menu-bars .bar3 {
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+  margin: 8px 0;
+  transition: 0.4s;
+}
+html body .menu-bars.change {
+  /* Rotate first bar */
+  /* Fade out the second bar */
+  /* Rotate last bar */
+}
+html body .menu-bars.change .bar1 {
+  transform: rotate(-45deg) translate(-7px, 8px);
+}
+html body .menu-bars.change .bar2 {
+  opacity: 0;
+}
+html body .menu-bars.change .bar3 {
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+html body section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primaryColor);
+}
+html body section#home {
+  background-image: url("zach-rowlandson-uq1NdZlUqt8-unsplash.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+html body section#home a {
+  position: absolute;
+  z-index: 2;
+  top: 1.5rem;
+  left: 1.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  padding-bottom: 5px;
+  color: var(--primaryColor);
+  border-bottom: 1px solid var(--primaryColor);
+}
+html body section#about {
+  background-color: var(--navColor2);
+}
+html body section#skills {
+  background-color: var(--navColor3);
+}
+html body section#projects {
+  background-color: var(--navColor4);
+}
+html body section#contact {
+  background-color: var(--navColor5);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .menu-bars {
+    top: 0.5rem;
+    right: 1rem;
+  }
+  section#home a {
+    top: 1rem;
+    left: 1rem;
+  }
+}/*# sourceMappingURL=style.css.map */
